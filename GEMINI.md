@@ -31,31 +31,11 @@ You must actively suppress habits from those languages.
 | **Subscript** | `<sub>` | `#sub[text]` |
 
 ## 1.2 Page & Font Setup (Global Settings)
-Start every document with a setup block. For Chinese text, **always** specify a CJK font.
-```typ
-#set page(paper: "a4", numbering: "1")
-#set text(font: "SimSun", lang: "zh") // "SimSun" for Songti, "SimHei" for Heiti
-#set heading(numbering: "1.1.")
-```
+Start every document with a setup block.
 
-### 1.2.1 Page Layout Options
 ```typ
-#set page(
-  paper: "a4",           // or "us-letter", "a5", etc.
-  margin: (top: 2cm, bottom: 2cm, left: 2.5cm, right: 2.5cm),
-  numbering: "1",        // Page number format
-  header: [My Document], // Header content
-  footer: context [Page #counter(page).display()], // Footer with page number
-)
-```
-
-### 1.2.2 Paragraph Settings
-```typ
-#set par(
-  justify: true,         // Justify text
-  leading: 0.8em,        // Line spacing
-  first-line-indent: 2em // Indent first line (important for Chinese)
-)
+#import "@preview/modern-cug-report:0.1.3": *
+#show: doc => template(doc, footer: "CUG水文气象学2025", header: "")
 ```
 
 ## 1.3 Figures & Tables
@@ -173,11 +153,13 @@ As shown in @tbl:data...
 
 You **MUST** use double quotes `""` for units, labels, or text words.
 
-*   ❌ **Wrong**: `$5 kg$` (Renders as $5 \cdot k \cdot g$)
-*   ❌ **Wrong**: `$x_sub$` (Renders as $x_{s \cdot u \cdot b}$)
-*   ✅ **Right**: `$5 "kg"$` (Renders as unit kg)
-*   ✅ **Right**: `$x_"sub"$` (Renders as subscript text)
-*   ✅ **Right**: `$"if" x > 0$`
+| Wrong        | Right          |
+| -----------  | -------------- |
+| `$5 kg$`     | `$5 "kg"$`     |
+| `$x_sub$`    | `$x_"sub"$`    |
+| `$ET$`       | `$"ET"$`       |
+| `$if x > 0$` | `$"if" x > 0$` |
+| `$degree.c$` | `$degree "C"$` |
 
 **CRITICAL**: In Typst math mode (`$...$`), single letters are variables.
 
