@@ -30,6 +30,8 @@ You must actively suppress habits from those languages.
 | **Superscript** | `<sup>` | `#super[text]` |
 | **Subscript** | `<sub>` | `#sub[text]` |
 
+> 请尤其注意，typst加粗是`*text*`，而非`**text**`，后者在typst中会显示warning！
+
 ## 1.2 Page & Font Setup (Global Settings)
 Start every document with a setup block.
 
@@ -295,13 +297,16 @@ Typst uses a package registry at `@preview/`. Import packages using:
 ### 3.1.1 Commonly Used Packages
 | Package | Purpose | Import |
 | :--- | :--- | :--- |
-| **physica** | Physics notation | `@preview/physica:0.9.6` |
-| **cetz** | Drawing/diagrams | `@preview/cetz:0.3.2` |
-| **fletcher** | Flowcharts/arrows | `@preview/fletcher:0.5.3` |
-| **codly** | Code highlighting | `@preview/codly:1.2.0` |
+| **physica** | Physics notation | `@preview/physica:0.9.7` |
+| **cetz** | Drawing/diagrams | `@preview/cetz:0.4.2` |
+| **fletcher** | Flowcharts/arrows | `@preview/fletcher:0.5.8` |
+| **codly** | Code highlighting | `@preview/codly:1.3.0` |
 | **tablex** | Advanced tables | `@preview/tablex:0.0.9` |
 | **showybox** | Colored boxes | `@preview/showybox:2.0.4` |
 | **ctheorems** | Theorem environments | `@preview/ctheorems:1.1.3` |
+
+> 注意一定要使用最新版本的包，不然极易报错。
+若包的函数报错，请检查是否使用了最新版本的包，包的链接在：https://typst.app/universe/package/<pkgname>/，physica为例，它的包在<https://typst.app/universe/package/physica>。
 
 ## 3.2 Templates & Document Functions
 ```typ
