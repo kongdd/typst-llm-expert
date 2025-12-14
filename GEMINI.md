@@ -30,6 +30,7 @@ You must actively suppress habits from those languages.
 | **Superscript** | `<sup>` | `#super[text]` |
 | **Subscript** | `<sub>` | `#sub[text]` |
 
+注意`FORBIDDEN`是错误的示范，`CORRECT`才是正确的规则!
 > 请尤其注意，typst加粗是`*text*`，而非`**text**`，后者在typst中会显示warning！
 
 ## 1.2 Page & Font Setup (Global Settings)
@@ -535,3 +536,8 @@ See @tbl:sample for data.
 | `\vspace{1em}` | `#v(1em)` |
 | `\\` (newline) | `\` |
 | `\newpage` | `#pagebreak()` |
+
+
+# 常见错误
+
+- 文字加粗正确的语法是`*text*`，而非`**text**`
